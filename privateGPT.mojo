@@ -67,6 +67,8 @@ def main():
         #     print("\n> " + document.metadata["source"] + ":")
         #     print(document.page_content)
 
+        
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description='privateGPT: Ask questions to your documents without an internet connection, '
                                                  'using the power of LLMs.')
