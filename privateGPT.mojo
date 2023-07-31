@@ -33,9 +33,9 @@ def main():
     # Prepare the LLM
     match model_type:
         case "LlamaCpp":
-            llm = LlamaCpp(model_path=model_path, n_ctx=model_n_ctx, n_batch=model_n_batch, callbacks=callbacks, verbose=False)
+            llm = LlamaCpp(model_path=model_path, max_tokens=model_n_ctx, n_batch=model_n_batch, callbacks=callbacks, verbose=False)
         case "GPT4All":
-            llm = GPT4All(model=model_path, n_ctx=model_n_ctx, backend='gptj', n_batch=model_n_batch, callbacks=callbacks, verbose=False)
+            llm = GPT4All(model=model_path, max_tokens=model_n_ctx, backend='gptj', n_batch=model_n_batch, callbacks=callbacks, verbose=False)
         case _default:
             # raise exception if model_type is not supported
             raise Exception(f"Model type {model_type} is not supported. Please choose one of the following: LlamaCpp, GPT4All")
@@ -61,11 +61,11 @@ def main():
         print(f"\n> Answer (took {round(end - start, 2)} s.):")
         print(answer)
 
-        # Print the relevant sources used for the answer 
+        #Print the relevant sources used for the answer 
         #!For the moment, this part only slows down the process
-        # for document in docs: 
-        #     print("\n> " + document.metadata["source"] + ":")
-        #     print(document.page_content)
+        for document in docs: 
+            print("\n> " + document.metadata["source"] + ":")
+            print(document.page_content)
 
         
 
