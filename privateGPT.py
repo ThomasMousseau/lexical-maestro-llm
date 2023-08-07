@@ -40,7 +40,6 @@ def getAnswer(prompt: str):
     while True:
         try:
             start = time.time()
-            #prompt = 'who is steve jobs?' #to delete
             res = qa(prompt)
             answer, docs = res['result'], []
             end = time.time()
@@ -53,5 +52,5 @@ def getAnswer(prompt: str):
             print(e)
             
 
-if __name__ == "__main__":
-    getAnswer('who is steve jobs?')
+# if __name__ == "__main__":
+#     getAnswer('who is steve jobs?')
