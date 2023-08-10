@@ -7,3 +7,4 @@ docker run --env VAR1=value1 --env VAR2=value2 ubuntu env | grep VAR
 
 How to run the docker container
 docker run -p 8000:8000 --network host lexical-maestro-llm
+sudo docker run -p 8000:8000 lexical-maestro-llm 

@@ -23,7 +23,7 @@ pypandoc = "^1.11"
 tqdm = "^4.65.0"
 fastapi = "^0.101.0"
 sentence-transformers = "^2.2.2"
-
+torch = ">=2.0.0, !=2.0.1"
 
 
 [build-system]
