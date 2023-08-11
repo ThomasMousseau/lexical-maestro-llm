@@ -15,7 +15,7 @@ COPY .env /app
 COPY controller.py /app
 COPY ingest.py /app
 COPY privateGPT.py /app
-copy constants.py /app
+COPY constants.py /app
 
 WORKDIR /app
 
@@ -23,6 +23,7 @@ WORKDIR /app
 RUN pip install poetry
 
 RUN poetry config virtualenvs.create false 
+#THIS IS WAY TO BIG, NEED TO FIX (7GB)
 RUN poetry install --only main
 
 CMD ["python", "ingest.py"]
