@@ -1,0 +1,21 @@
+name: Deployment
+
+concurrency: production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: deploy
+        run: |
+          # ...deployment-specific steps
+          echo "Deploying to production"
+          # ...deployment-specific steps
+          echo "Deployed to production"
+        # ...deployment-specific steps
